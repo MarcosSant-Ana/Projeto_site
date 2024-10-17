@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: black;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.titulocarrinho {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logofim {
+    margin-left: 10px;
+    max-width: 200px;
+}
+
+.mensagem {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.voltar {
+    text-align: center;
+    margin-top: 20px;
+}
+.botaohome:hover {
+    color: red;
+}
+h1{
+    color: white;
+}
+.botaohome{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    
+}

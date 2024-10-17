@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    
+       <link rel="stylesheet" href="carrinho.css"> 
+</head>
+<body>
+    <header>
+      <div class="titulocarrinho">
+        <h1 style="margin-left: 38%;">Carrinho de Compras</h1>
+        <img id = 'logonocarrinho' src="imagens/fundo_preto.png" alt="">
+        </div>
+    </header>
+
+    <div class="produtocarrinho">
+            <div id="carrinho"></div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome do Produto</th>
+                        <th>Modelo</th>
+                        <th>Quantidade</th>
+                        <th>Preço Unitário</th>
+                        <th>Preço Total</th>
+                        <!--Coluna adicionada para o botao remover-->
+                        <th>Ações</th> 
+                    </tr>
+                </thead>
+                <tbody id="itens-carrinho">
+                </tbody>
+            </table>
+        <div class="total" id="total">Total: R$0</div>
+    </div>
+
+        <script src="carrinho.js"></script>
+    <script>
+                window.onload = function() {
+            atualizarCarrinho();
+
+            function limparCarrinho() {
+        localStorage.removeItem('carrinho'); 
+        window.location.href = 'Fim.html';
+            } 
+        };
+    </script>
+
+        <div>
+            <button class="botaoContinuarCompra" onclick="window.location.href='newhatMAIN.html'">Continuar compra</button>
+            <button class="botaofinalizarcompra" onclick="limparCarrinho()">finalizar compra</button>
+        </div>
+    </div>
+</body>

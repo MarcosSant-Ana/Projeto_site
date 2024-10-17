@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <title>NewHats</title>
+  <meta charset="utf-8" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Main.css">
+
+  <style>
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <img id='imagemlogo' src="imagens/fundo_branco.png" alt="">
+    <span style="  font-family: Bebas Neue;font-size:50px;;">New Hat's</span>
+    <button class="botao-carrinho" onclick="window.location.href='carrinhoMAIN.html'">Carrinho</button>
+  </div>
+  <aside>
+    <div id="produtos">
+    </div>
+  </aside>
+  </div>
+  <div></div>
+  <script>
+    const item = [
+
+      {
+        id: 0,
+        nome: 'New Era NY',
+        tipo: 'preto aba curva',
+        imagem: 'imagens/bonenewera.jpg',
+        preco: 121,
+        quantidade: 0
+      },
+      {
+        id: 1,
+        nome: 'Nike ',
+        tipo: 'PRETO ABA CURVA',
+        imagem: 'imagens/bonenike.jpg',
+        preco: 85,
+        quantidade: 0
+      },
+      {
+        id: 2,
+        nome: 'Adidas ',
+        tipo: 'PRETO ABA CURVA',
+        imagem: 'imagens/boneadidas.webp',
+        preco: 90,
+        quantidade: 0
+      },
+      {
+        id: 3,
+        nome: 'La Lakers ',
+        tipo: 'ROXo ABA RETA',
+        imagem: 'imagens/bone1.webp',
+        preco: 150,
+        quantidade: 0
+      },
+      {
+        id: 4,
+        nome: 'Boston celtics',
+        tipo: 'verde aba reta ',
+        imagem: 'imagens/bone2.webp',
+        preco: 170,
+        quantidade: 0
+      },
+      {
+        id: 5,
+        nome: 'redbull',
+        tipo: 'azul aba curva',
+        imagem: 'imagens/bone3.webp',
+        preco: 140,
+        quantidade: 0
+      },
+      {
+        id: 6,
+        nome: 'new era ny',
+        tipo: 'preto e dourado aba curva',
+        imagem: 'imagens/bone4.webp',
+        preco: 120,
+        quantidade: 0
+      },
+      {
+        id: 7,
+        nome: 'New Era',
+        tipo: 'rosa aba CURVA',
+        imagem: 'imagens/bone5.webp',
+        preco: 80,
+        quantidade: 0
+      },
+      {
+        id: 8,
+        nome: 'New Era toddlers ',
+        tipo: 'branco aba curva ',
+        imagem: 'imagens/bone6.webp',
+        preco: 120,
+        quantidade: 0
+      },
+      {
+        id: 9,
+        nome: 'red sox',
+        tipo: 'rosa aba curva',
+        imagem: 'imagens/bone7.webp',
+        preco: 60,
+        quantidade: 0
+      },
+      {
+        id: 10,
+        nome: 'New Era 9forty',
+        tipo: 'azul e branco aba curva',
+        imagem: 'imagens/bone8.webp',
+        preco: 180,
+        quantidade: 0
+
+      },
+      {
+        id: 11,
+        nome: 'New Era 9forty',
+        tipo: 'azul e amarelo aba reta',
+        imagem: 'imagens/bone9.webp',
+        preco: 180,
+        quantidade: 0
+      }
+    ];
+    const iniciarLoja = () => {
+      const contProdutos = document.getElementById('produtos');
+      item.forEach((val) => {
+        contProdutos.innerHTML += `
+            <div class="umProduto">
+                <img class="minhaImagem" src="${val.imagem}"/>
+                <p>${val.nome}</p>
+                <p>${val.tipo}</p>
+                <p>R$${val.preco}</p>
+                <button class="adicionarcarrinho" onclick="adicionarAoCarrinho('${val.nome}', ${val.preco},'${val.tipo}')">Adicionar ao carrinho</button>
+            </div>
+        `;
+      });
+    }
+    function adicionarAoCarrinho(nome, preco, tipo) {
+      let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+      const itemExistente = carrinho.find(item => item.nome === nome);
+      if (itemExistente) {
+        itemExistente.quantidade += 1;
+      } else {
+        carrinho.push({ nome: nome, preco: preco, tipo: tipo, quantidade: 1 });
+      }
+      localStorage.setItem('carrinho', JSON.stringify(carrinho));
+      mostrarFeedback('Produto adicionado ao carrinho!');
+    }
+    iniciarLoja();
+
+    function mostrarFeedback(mensagem) {
+      const feedbackElement = document.createElement('div');
+      feedbackElement.classList.add('feedback');
+      feedbackElement.textContent = mensagem;
+      document.body.appendChild(feedbackElement);
+      setTimeout(() => {
+        feedbackElement.remove();
+      }, 3000); 
+    }
+
+  </script>
+  <script>
+    var imagens = document.querySelectorAll('.minhaImagem');
+    var larguraDesejada = 180;
+    var alturaDesejada = 200;
+    imagens.forEach(function (imagem) {
+      imagem.style.width = larguraDesejada + 'px';
+      imagem.style.height = alturaDesejada + 'px';
+    });
+  </script>
+</body>
+
+</html>

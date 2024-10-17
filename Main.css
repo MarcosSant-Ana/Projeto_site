@@ -1,0 +1,140 @@
+* {
+    font-family: Bebas Neue, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    
+}
+
+body {
+   
+    position: flex;
+    background: white;
+}
+
+
+
+#imagemlogo {
+    position: absolute;
+    max-height: 20%;
+    height: auto;
+    width: auto;
+    margin-right: 10px;
+    margin-left: -40px;
+}
+
+.div-botaocarrinho {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0px 0px 0px 0px;
+}
+
+.container span {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.botao-carrinho {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.botao-carrinho:hover {
+    color: red;
+}
+
+#produtos {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.umProduto {
+    width: 0 10px;
+    margin-right: 2%;
+    border: 0px solid black;
+    margin-top: 50px;
+    margin-bottom: 20px;
+
+}
+
+.umProduto img {
+    max-width: 100%;
+    position: relative;
+    margin-left: 0 auto;
+
+}
+
+.umProduto p {
+    text-align: center;
+    font-size: 16px;
+    padding: 4px;
+
+}
+
+.umProduto a {
+    text-decoration: none;
+    color: black;
+
+    border-radius: 6px;
+    text-align: center;
+    display: block;
+    padding: 4px 0px;
+    font-size: 18px;
+
+}
+
+.umProduto a:hover {
+    color: red;
+}
+
+.adicionarcarrinho {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.adicionarcarrinho:hover {
+    color: red;
+}
+
+aside {
+    margin-left: 100px;
+}
+
+.container {
+    display: flex;
+    justify-content: st;
+    align-items: center;
+    padding: 20px;
+
+}
+.feedback {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: goldenrod;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 9999;
+  }
+  
